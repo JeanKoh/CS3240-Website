@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jean's Website</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel = "stylesheet"/>
+
+    </head>
+    <body>
+
+        <div class="container-fluid center-block">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <!-- Responsive nav bar settings -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+                    <a class="navbar-brand" href="index.html">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- Nav bar content -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="bio.html">Biography</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interests <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="music.html">Music</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!--BODY TITLE-->
+        <div class="container center-block parallax">
+            <div class = "row">
+                <div class = "col-sm-12 whiteLine">
+                    <h2>A musical outlook into the world</h2>
+                    <h4>Click images below to find out more</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "col-sm-6">
+                    <img class="img-responsive" src="img/TS.jpg" alt="" id = "TS"/>
+                </div>
+                <br>
+                <div class="col-sm-6 collapse-group well" id = "ENG">
+                    <h2> English</h2>
+                    <a class="btn" data-toggle="collapse" data-target="#viewdetails1">What do I Like?</a>
+                    <div class="collapse" id="viewdetails1">
+                        <p>I like english songs cause I can understand them. I like lyrics which are meaningful... most of the time! It's easier for me to sing as well.</p>
+                        <p>Ratings are my personal ratings, do not be offended! XD</p>
+                        <ul>
+                            <li>Taylor Swift (Love her music!) <strong>10/10</strong> would listen!</li>
+                            <li>Selena Gomez <strong>8/10</strong></li>
+                            <li>Little Mix <strong>9/10</strong></li>
+                            <li>Maroon 5 <strong>9/10</strong></li>
+                            <li>Fifth Harmony <strong> 8/10</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class = "row">
+                <div class = "col-sm-6">
+                    <!-- working-->
+                    <img class="img-responsive" src="img/TY.jpg" alt="" id = "TY"/>
+                </div>
+                <br>
+                <div class="col-sm-6 collapse-group well" id = "KPOP">
+                    <h2>KPOP</h2>
+                    <a class="btn" data-toggle="collapse" data-target="#viewdetails2">What do I like?</a>
+                    <div class = "collapse" id = "viewdetails2">
+                        <p> Short for Korean-pop. While I do not understand the language, I enjoy the rhythm, beat and their vocals. Most of the ones I still listen to are those older mainstream groups.</p>
+                        <ul>
+                            <li>SNSD (They were the 2nd group that I ever heard KPOP. First being Wondergirls.) <strong> 10 out of 10!</strong></li>
+                            <li>Apink <strong> 9/10 (I love their sweet melody)</strong></li>
+                            <li>BlackPink<strong> 8/10</strong></li>
+                            <li>BigBang <strong> 8/10</strong></li>
+                            <li>SHINee<strong> 7/10</strong></li>
+                            <li>UI <strong> 10/10 vocals!</strong></li>
+                            <li>2NE1 <strong> 8/10</strong></li>
+                            <li>Girl's Day <strong> 9/10</strong></li>
+                            <li>Twice <strong> 7/10</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class = "row well">
+                <!-- Text field -->
+                <div class="form-group col-sm-12">
+                    <label>Give me song recommendations!</label>
+                    <input class="form-control" id="inputName" placeholder="Name">
+                </div>
+                <!-- Text Area -->
+                <div class="form-group col-sm-12">
+                    <textarea class="form-control" rows="3" placeholder="Song Name and Singers" id = "suggestions"></textarea>
+                </div>
+                <!--Button --> 
+                <button class="btn btn-primary" type="button" id="submitBtn" >Give it to me!</button>
+            </div>
+            <footer class = whiteLine>
+                <p> images obtained from <a href ="https://www.flickr.com/photos/tonyshek/18280268726/"> GabboT</a> and <a href = "http://blog.naver.com/livingocean?Redirect=Log&logNo=50145415571&from=postView">livingocean</a></p>
+            </footer>
+        </div>
+        <!-- JavaScript placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready( function() {
+                $("#ENG").fadeOut(0);
+                $("#KPOP").fadeOut(0);
+                $("#TY").mouseenter(function() {
+                    $( "#TY" ).animate({
+                        opacity: 0.75
+                    }, 150);
+                }); 
+                $("#TY").mouseleave(function() {
+                    $( "#TY" ).animate({
+                        opacity: 1
+                    },150);
+                }); 
+                $("#TS").mouseenter(function() {
+                    $( "#TS" ).animate({
+                        opacity:0.75
+                    },150);
+                }); 
+                $("#TS").mouseleave(function() {
+                    $( "#TS" ).animate({
+                        opacity: 1
+                    },150);
+                }); 
+                $("#TY").click(function () {
+                    if($('#KPOP').is(":visible")){
+                        $('#KPOP').hide();
+                    }else{
+                        $('#KPOP').show();
+                    }
+                });
+
+                $("#TS").click(function () {
+                    if($('#ENG').is(":visible")){
+                        $('#ENG').hide();
+                    }else{
+                        $('#ENG').show();
+                    }
+                });
+
+                $("#submitBtn").click(function () {
+                    if($("#inputName").val().length==0){
+                        alert("Please fill in your name");
+                    } 
+                    else if($("#suggestions").val().length==0){
+                        alert("Please fill in your suggestion");
+                    } else {
+                        alert("Thanks~");
+                    }
+                });
+
+            });
+        </script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
